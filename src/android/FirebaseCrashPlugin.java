@@ -49,9 +49,12 @@ public class FirebaseCrashPlugin extends ReflectiveCordovaPlugin {
 
     @CordovaMethod(ExecutionThread.UI)
     private void logError(String message, CallbackContext callbackContext) {
-        if(firebaseCrashlytics != null){
-            firebaseCrashlytics.recordException(new Exception(message));
-            callbackContext.success();
+        try {
+            if(firebaseCrashlytics != null){
+                firebaseCrashlytics.recordException(new Exception(message));
+                callbackContext.success();
+            }
+        } catch (Exception e) {
         }
     }
 
