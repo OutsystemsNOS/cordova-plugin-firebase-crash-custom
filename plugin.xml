@@ -60,8 +60,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </platform>
 
     <platform name="android">
-        <!--<preference name="ANDROID_FIREBASE_CRASHLYTICS_VERSION" default="18.2.+"/>-->
-        <preference name="ANDROID_FIREBASE_CRASHLYTICS_VERSION" default="18.3.1"/>
+        <preference name="ANDROID_FIREBASE_CRASHLYTICS_VERSION" default="18.2.+"/>
+        <!--<preference name="ANDROID_FIREBASE_CRASHLYTICS_VERSION" default="18.3.1"/>-->
 
         <hook type="before_plugin_install" src="hooks/android/build_gradle_add_dependency.js" />
         
