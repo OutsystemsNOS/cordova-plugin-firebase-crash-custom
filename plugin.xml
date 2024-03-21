@@ -38,10 +38,6 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             </feature>
         </config-file>
 
-        <!--
-            use a bit hacky method to set boolean value as a string:
-            https://developer.apple.com/documentation/foundation/nsstring/1409420-boolvalue?preferredLanguage=occ
-        -->
         <config-file target="*-Info.plist" parent="FirebaseCrashlyticsCollectionEnabled">
             <string>$FIREBASE_CRASHLYTICS_COLLECTION_ENABLED</string>
         </config-file>
@@ -56,8 +52,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             <pods use-frameworks="true">
                 <pod name="Firebase/Crashlytics" spec="$IOS_FIREBASE_CRASHLYTICS_VERSION" />
             </pods>
-        </podspec>
-        
+        </podspec>     
     </platform>
 
     <platform name="android">
