@@ -55,10 +55,6 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </platform>
 
     <platform name="android">
-        
-        <edit-config file="AndroidManifest.xml" target="/manifest/uses-sdk" mode="merge">
-                   <uses-sdk android:minSdkVersion="28"/>
-        </edit-config>
                
         <preference name="ANDROID_FIREBASE_CRASHLYTICS_VERSION" default="18.2.+"/>
         <!--<preference name="ANDROID_FIREBASE_CRASHLYTICS_VERSION" default="18.3.1"/>-->
