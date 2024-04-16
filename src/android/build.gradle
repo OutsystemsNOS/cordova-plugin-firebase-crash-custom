@@ -15,10 +15,6 @@ buildscript {
 apply plugin: com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsPlugin
 
 android {
-    defaultConfig {
-        minSdkVersion 28 //MABS 10
-        targetSdkVersion 34
-    }
     
     buildTypes {
         debug {
