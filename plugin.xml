@@ -55,6 +55,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </platform>
 
     <platform name="android">
+        
+        <preference name="android-minSdkVersion" value="28" />
+               
         <preference name="ANDROID_FIREBASE_CRASHLYTICS_VERSION" default="18.2.+"/>
         <!--<preference name="ANDROID_FIREBASE_CRASHLYTICS_VERSION" default="18.3.1"/>-->
 
