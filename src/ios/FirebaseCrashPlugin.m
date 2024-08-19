@@ -2,6 +2,7 @@
 
 //@import Firebase;
 @import FirebaseCrashlytics;
+@import FirebaseCore;
 
 @implementation FirebaseCrashPlugin
 
