@@ -23,6 +23,23 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+- (void)setCustomKeys:(CDVInvokedUrlCommand *)command {
+    NSString* keyname = [command.arguments objectAtIndex:0];
+    NSString* keyvalue = [command.arguments objectAtIndex:1];
+
+    @try{  
+        NSDictionary *keysAndValues = @{keyname :keyvalue"};
+    
+        [[FIRCrashlytics crashlytics] setCustomKeysAndValues: keysAndValues];
+    
+        CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }@catch (NSException* exception) {
+        CDVPluginResult* pluginResultErr = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[exception reason]];  
+        [self.commandDelegate sendPluginResult:pluginResultErr callbackId:command.callbackId];
+    }
+}
+
 - (void)logError:(CDVInvokedUrlCommand*)command {
     NSString *description = NSLocalizedString([command argumentAtIndex:0 withDefault:@"No Message Provided"], nil);
     NSDictionary *userInfo = @{ NSLocalizedDescriptionKey: description };
