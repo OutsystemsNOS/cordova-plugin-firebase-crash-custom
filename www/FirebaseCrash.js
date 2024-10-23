@@ -27,9 +27,9 @@ module.exports = {
             exec(resolve, reject, PLUGIN_NAME, "setEnabled", [enabled]);
         });
     },
-    setCustomKeys: function(keyname, keyvalue) {
+    setCustomKeys: function(keyname1, keyvalue1, keyname2, keyvalue2, keyname3, keyvalue3, keyname4, keyvalue4) {
         return new Promise(function(resolve, reject) {
-            exec(resolve, reject, PLUGIN_NAME, "setCustomKeys", [keyname, keyvalue]);
+            exec(resolve, reject, PLUGIN_NAME, "setCustomKeys", [keyname1, keyvalue1, keyname2, keyvalue2, keyname3, keyvalue3, keyname4, keyvalue4]);
         });
     }
 };
