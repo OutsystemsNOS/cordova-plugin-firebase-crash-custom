@@ -24,11 +24,17 @@
 }
 
 - (void)setCustomKeys:(CDVInvokedUrlCommand *)command {
-    NSString* keyname = [command.arguments objectAtIndex:0];
-    NSString* keyvalue = [command.arguments objectAtIndex:1];
+    NSString* keyname1 = [command.arguments objectAtIndex:0];
+    NSString* keyvalue1 = [command.arguments objectAtIndex:1];
+    NSString* keyname2 = [command.arguments objectAtIndex:2];
+    NSString* keyvalue2 = [command.arguments objectAtIndex:3];
+    NSString* keyname3 = [command.arguments objectAtIndex:4];
+    NSString* keyvalue3 = [command.arguments objectAtIndex:5];
+    NSString* keyname4 = [command.arguments objectAtIndex:6];
+    NSString* keyvalue4 = [command.arguments objectAtIndex:7];
 
     @try{  
-        NSDictionary *keysAndValues = @{keyname :keyvalue};
+        NSDictionary *keysAndValues = @{keyname1 :keyvalue1, keyname2 :keyvalue2, keyname3 :keyvalue3, keyname4 :keyvalue4};
     
         [[FIRCrashlytics crashlytics] setCustomKeysAndValues: keysAndValues];
     
