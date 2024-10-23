@@ -26,5 +26,10 @@ module.exports = {
         return new Promise(function(resolve, reject) {
             exec(resolve, reject, PLUGIN_NAME, "setEnabled", [enabled]);
         });
+    },
+    setCustomKeys: function(keyname, keyvalue) {
+        return new Promise(function(resolve, reject) {
+            exec(resolve, reject, PLUGIN_NAME, "setCustomKeys", [keyname, keyvalue]);
+        });
     }
 };
