@@ -34,9 +34,24 @@
     NSString* keyvalue4 = [command.arguments objectAtIndex:7];
 
     @try{  
-        NSDictionary *keysAndValues = @{keyname1 :keyvalue1, keyname2 :keyvalue2, keyname3 :keyvalue3, keyname4 :keyvalue4};
+        NSMutableDictionary *keysAndValues = [NSMutableDictionary dictionary];
+        
+        if (![keyname1 isEqualToString:@""] && ![keyvalue1 isEqualToString:@""]) {
+            [keysAndValues setObject:keyvalue1 forKey:keyname1];
+        }
+        if (![keyname2 isEqualToString:@""] && ![keyvalue2 isEqualToString:@""]) {
+            [keysAndValues setObject:keyvalue2 forKey:keyname2];
+        }
+        if (![keyname3 isEqualToString:@""] && ![keyvalue3 isEqualToString:@""]) {
+            [keysAndValues setObject:keyvalue3 forKey:keyname3];
+        }
+        if (![keyname4 isEqualToString:@""] && ![keyvalue4 isEqualToString:@""]) {
+            [keysAndValues setObject:keyvalue4 forKey:keyname4];
+        }
     
-        [[FIRCrashlytics crashlytics] setCustomKeysAndValues: keysAndValues];
+        if ([keysAndValues count] > 0) {
+            [[FIRCrashlytics crashlytics] setCustomKeysAndValues:keysAndValues];
+        }
     
         CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
