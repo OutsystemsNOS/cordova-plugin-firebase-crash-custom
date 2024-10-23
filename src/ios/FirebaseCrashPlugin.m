@@ -28,7 +28,7 @@
     NSString* keyvalue = [command.arguments objectAtIndex:1];
 
     @try{  
-        NSDictionary *keysAndValues = @{keyname :keyvalue"};
+        NSDictionary *keysAndValues = @{keyname :keyvalue};
     
         [[FIRCrashlytics crashlytics] setCustomKeysAndValues: keysAndValues];
     
