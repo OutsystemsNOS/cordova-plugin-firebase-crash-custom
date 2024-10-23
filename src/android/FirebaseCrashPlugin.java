@@ -59,10 +59,13 @@ public class FirebaseCrashPlugin extends ReflectiveCordovaPlugin {
     }
 
     @CordovaMethod(ExecutionThread.UI)
-    private void setCustomKeys(String keyname, String keyvalue, CallbackContext callbackContext) {
+    private void setCustomKeys(String keyname1, String keyvalue1, String keyname2, String keyvalue2, String keyname3, String keyvalue3, String keyname4, String keyvalue4, CallbackContext callbackContext) {
         try {
             if(firebaseCrashlytics != null){                
-                firebaseCrashlytics.setCustomKey(keyname, keyvalue);
+                firebaseCrashlytics.setCustomKey(keyname1, keyvalue1);
+                firebaseCrashlytics.setCustomKey(keyname2, keyvalue2);
+                firebaseCrashlytics.setCustomKey(keyname3, keyvalue3);
+                firebaseCrashlytics.setCustomKey(keyname4, keyvalue4);
                 callbackContext.success();
             }
         } catch (Exception e) {
